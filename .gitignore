@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+yarn.lock
 
 # testing
 /coverage
@@ -12,7 +13,6 @@
 /build
 
 # misc
-config.js
 .DS_Store
 .env.local
 .env.development.local
