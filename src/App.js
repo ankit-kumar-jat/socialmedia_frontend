@@ -16,6 +16,9 @@ import Feed from './pages/Feed';
 import Trending from './pages/Trending';
 import PostById from './pages/PostById';
 import { SnackbarProvider } from 'notistack';
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory({ basename: '/your-base-name' });
 
 const authReducer = (authState, action) => {
   switch (action.type) {
@@ -55,7 +58,7 @@ function App(props) {
 
   return (
     <React.Fragment>
-      <Router>
+      <Router basename="/socialmedia_frontend" history={history}>
         <SnackbarProvider
           anchorOrigin={{
             vertical: 'bottom',

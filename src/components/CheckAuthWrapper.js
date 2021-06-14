@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import App from '../App';
 import { SERVER } from '../config'
 
+
 export class CheckAuthWrapper extends Component {
 
     constructor(props) {
@@ -55,7 +56,9 @@ export class CheckAuthWrapper extends Component {
 
     render() {
         return (
-            this.state.initialState ? <App initialState={this.state.initialState} /> : <p>Loading...</p>
+            this.state.initialState ? (
+                <App initialState={this.state.initialState} />
+            ) : <p>Loading...</p>
         )
     }
 }
