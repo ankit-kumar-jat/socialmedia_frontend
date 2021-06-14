@@ -151,10 +151,10 @@ export default function PostCard(props) {
             {/*<MenuItem>Hi {authState.username}!</MenuItem>*/}
             <MenuItem onClick={handleMenuClose} disabled>Save Post</MenuItem>
             <MenuItem onClick={handleMenuClose} disabled>Report post</MenuItem>
-            {!loading && props.notSkeleton && user.userId === post.owner.userId && (<div>
+            {!loading && props.notSkeleton && post.owner && user.userId === post.owner.userId && (<div>
                 {/*<Divider />*/}
                 <MenuItem onClick={() => { handleMenuClose(); handleDeletePost(); }} >
-                    <Typography color='secondary'> Delete post</Typography>
+                    <Typography color='secondary'>Delete post</Typography>
                 </MenuItem>
             </div>)}
         </Menu>
@@ -250,7 +250,7 @@ export default function PostCard(props) {
     }
 
     React.useEffect(() => {
-        if (props.notSkeleton) {
+        if (props.notSkeleton && post.postId) {
             fetch(`${SERVER}/posts/like?postId=${post.postId}`, {
                 method: 'GET',
                 credentials: 'include',
@@ -275,6 +275,12 @@ export default function PostCard(props) {
                 })
         }
     }, [setLiked, post.postId, props.notSkeleton])
+
+    // React.useState(() => {
+    //     if (post !== props.post) {
+    //         setPost(props.post);
+    //     }
+    // }, [props.post])
 
     return (
         <React.Fragment>
@@ -323,6 +329,8 @@ export default function PostCard(props) {
                         image={`${SERVER}${post.postImage}`}
                         title={`${post.owner.login}'s post`}
                         alt={post.postImage}
+                        to={`/posts/${post.postId}`}
+                        component={props.single ? CardContent : RouterLink}
                     />
                     )
                     : (<Skeleton animation="wave" variant="rect" className={classes.media} />)

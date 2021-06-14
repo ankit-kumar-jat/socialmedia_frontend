@@ -34,7 +34,6 @@ import WhatshotIcon from '@material-ui/icons/Whatshot';
 import HomeIcon from '@material-ui/icons/Home';
 // import CollectionsIcon from '@material-ui/icons/Collections';
 import SettingsIcon from '@material-ui/icons/Settings';
-// import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import { makeStyles, useTheme, createMuiTheme } from '@material-ui/core/styles';
@@ -43,6 +42,7 @@ import AuthContext from "../utils/AuthContext";
 import UserContext from '../utils/UserContext';
 import { useSnackbar } from 'notistack';
 import NewPost from './NewPost';
+import Notification from './Notification';
 import { SERVER } from '../config'
 const drawerWidth = 300;
 
@@ -318,11 +318,7 @@ function Navigation(props) {
                         </Tooltip>
                         {authState.isAuthenticated ? (
                             <React.Fragment>
-                                {/*<Tooltip title="Notifications">
-                                    <IconButton aria-label="Notifications" color="inherit">
-                                        <NotificationsNoneIcon />
-                                    </IconButton>
-                        </Tooltip>*/}
+                                <Notification />
                                 <Tooltip title="Account">
                                     <IconButton
                                         aria-label="Current User"

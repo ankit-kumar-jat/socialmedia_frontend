@@ -14,6 +14,7 @@ import AuthContext from "./utils/AuthContext";
 import Settings from './pages/Settings';
 import Feed from './pages/Feed';
 import Trending from './pages/Trending';
+import PostById from './pages/PostById';
 import { SnackbarProvider } from 'notistack';
 
 const authReducer = (authState, action) => {
@@ -72,6 +73,7 @@ function App(props) {
                 <PrivateRoute exact path="/settings" component={Settings} />
                 <PrivateRoute exact path="/feed" component={Feed} />
                 <PrivateRoute exact path="/trending" component={Trending} />
+                <PrivateRoute exact path="/posts/:postId" component={PostById} />
                 <PrivateRoute exact path="/users/:username" component={User} />
                 <Route component={NotFound} />
               </Switch>

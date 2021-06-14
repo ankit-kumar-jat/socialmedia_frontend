@@ -106,7 +106,7 @@ export class GetPosts extends Component {
                         onClick={this.handleLoadMore}
                         disabled={this.state.loadMore}>
                         Load More
-                        </Button>
+                    </Button>
                     {this.state.loadMore && <CircularProgress
                         size={24}
                         style={{
