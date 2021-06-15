@@ -25,7 +25,7 @@ import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 import SendIcon from '@material-ui/icons/Send';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Comment from '../components/Comment';
+import Comment from './Comment';
 import AuthContext from '../utils/AuthContext';
 import { useSnackbar } from 'notistack';
 import UserContext from '../utils/UserContext';
@@ -35,6 +35,7 @@ import { SERVER } from "../config";
 const useStyles = makeStyles((theme) => ({
     card: {
         borderRadius: 10,
+        margin: 'auto',
         marginBottom: theme.spacing(3),
     },
     cardContent: {
@@ -62,8 +63,7 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
     },
     media: {
-        // paddingTop: '56.25%',//16:9 aspect ratio
-        paddingTop: "100%", // 1:1 aspect ratio
+        paddingTop: '56.25%',
     },
 }));
 
