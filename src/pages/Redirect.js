@@ -2,10 +2,10 @@ import React from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 
 function Redirect() {
-	const { path } = useParams();
+	const { urlPath } = useParams();
 	const history = useHistory();
 	React.useEffect(() => {
-		history.push(`/${path}`)
+		history.push(`/${urlPath}`)
 	})
 	return (
 		<>
