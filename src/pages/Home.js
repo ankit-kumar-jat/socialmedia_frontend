@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import { useSnackbar } from 'notistack';
 import AuthContext from '../utils/AuthContext';
 import GetPosts from '../components/GetPosts';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +29,14 @@ function Home() {
 
     // const { enqueueSnackbar } = useSnackbar();
 
+    const history = useHistory()
+    const search = useLocation().search;
+    const page = new URLSearchParams(search).get('page');
+    React.useEffect(() => {
+        if (page) {
+            history.push(page);
+        }
+    })
 
     return (
         <React.Fragment>
