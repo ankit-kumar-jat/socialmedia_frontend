@@ -125,7 +125,7 @@ function Register() {
                         history.push("/login")
                     } else {
                         const variant = 'error';
-                        enqueueSnackbar('Registration failed!', { variant });
+                        enqueueSnackbar(data.message, { variant });
                         setDisableBtn({
                             submit: false
                         })

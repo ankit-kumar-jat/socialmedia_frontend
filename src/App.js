@@ -16,6 +16,7 @@ import Feed from './pages/Feed';
 import Trending from './pages/Trending';
 import PostById from './pages/PostById';
 import { SnackbarProvider } from 'notistack';
+import Redirect from './pages/Redirect';
 // import { createBrowserHistory } from 'history';
 
 // const history = createBrowserHistory({ basename: '/socialmedia_frontend' });
@@ -79,6 +80,7 @@ function App(props) {
                 <PrivateRoute exact path="/trending" component={Trending} />
                 <PrivateRoute exact path="/posts/:postId" component={PostById} />
                 <PrivateRoute exact path="/users/:username" component={User} />
+                <Route exect path="/redirect/:path" component={Redirect} />
                 <Route component={NotFound} />
               </Switch>
             </Navigation>
