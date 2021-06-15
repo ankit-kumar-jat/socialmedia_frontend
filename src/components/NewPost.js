@@ -17,6 +17,7 @@ import {
     // Divider,
     Container,
 } from '@material-ui/core';
+import { useHistory } from 'react-router-dom'
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import { makeStyles } from '@material-ui/core/styles';
 import CloseIcon from '@material-ui/icons/Close';
@@ -74,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
 var image = null;
 
 export default function NewPost() {
+    const history = useHistory();
     const classes = useStyles();
     const { authDispatch } = React.useContext(AuthContext);
     const [open, setOpen] = React.useState(false);
@@ -121,6 +123,7 @@ export default function NewPost() {
                         authDispatch({
                             type: 'REFPOST'
                         })
+                        history.push(`/posts/${data.post._id}`);
                     } else {
                         if (data.status === 401)
                             authDispatch({
@@ -219,7 +222,7 @@ export default function NewPost() {
                                 </div>
                                 <Button variant="contained" disableElevation onClick={handleClose}>
                                     Close
-                                    </Button>
+                                </Button>
                                 <div className={classes.btnWrapper}>
                                     <Button variant="contained" color="primary" type='submit' disableElevation disabled={disableBtn.submit}>
                                         Create Post

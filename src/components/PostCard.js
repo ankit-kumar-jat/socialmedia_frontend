@@ -62,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
     },
     media: {
-        paddingTop: '56.25%',
+        // paddingTop: '56.25%',//16:9 aspect ratio
+        paddingTop: "100%", // 1:1 aspect ratio
     },
 }));
 
