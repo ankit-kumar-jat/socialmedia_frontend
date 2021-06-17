@@ -136,6 +136,7 @@ function Login() {
                                 <InputLabel htmlFor="userEmail">Email</InputLabel>
                                 <Input
                                     id="userEmail"
+                                    type="email"
                                     value={values.email}
                                     onChange={handleChange('email')}
                                     startAdornment={
