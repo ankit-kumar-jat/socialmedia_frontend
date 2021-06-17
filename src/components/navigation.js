@@ -111,11 +111,17 @@ function Navigation(props) {
     const light = {
         palette: {
             type: 'light',
+            primary: {
+                main: '#00bcd4'
+            },
         },
     }
     const dark = {
         palette: {
             type: 'dark',
+            primary: {
+                main: '#00bcd4'
+            },
         },
     }
     const [myTheme, setTheme] = React.useState(true);

@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
         left: '50%',
         marginTop: -12,
         marginLeft: -12,
+    },
+    success: {
+        color: theme.palette.success.main,
     }
 }));
 
@@ -86,7 +89,7 @@ function ForgetPass() {
                 <Box mt={5}>
                     <Typography variant="h4" color="initial">Forget <br />Password</Typography>
                     <Typography variant="body1" color="inherit">Enter your email to generate reset password link.</Typography>
-                    {generated && <Typography variant="body1" color="inherit" className={classes.margin}>Reset password link generated successfully.</Typography>}
+                    {generated && <Typography variant="body1" className={clsx(classes.margin, classes.success)}>Reset password link generated successfully.</Typography>}
                     <form onSubmit={handleForgetPass}>
                         <FormControl fullWidth className={classes.margin} error={error}>
                             <InputLabel htmlFor="userEmail">Enter Your Registered Email</InputLabel>
