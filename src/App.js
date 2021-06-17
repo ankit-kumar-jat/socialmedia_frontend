@@ -16,6 +16,7 @@ import Feed from './pages/Feed';
 import Trending from './pages/Trending';
 import PostById from './pages/PostById';
 import { SnackbarProvider } from 'notistack';
+import ResetPass from './pages/ResetPass';
 // import { createBrowserHistory } from 'history';
 
 // const history = createBrowserHistory({ basename: '/socialmedia_frontend' });
@@ -73,6 +74,7 @@ function App(props) {
                 <PrivateRoute exact path="/" component={Home} />
                 <PublicRoute exact path="/login" component={Login} />
                 <PublicRoute exact path="/forgetpass" component={ForgetPass} />
+                <PublicRoute exact path="/forgetpass/:token" component={ResetPass} />
                 <PublicRoute exact path="/register" component={Register} />
                 <PrivateRoute exact path="/settings" component={Settings} />
                 <PrivateRoute exact path="/feed" component={Feed} />
