@@ -12,6 +12,7 @@ function PostById() {
 
 	const { enqueueSnackbar } = useSnackbar();
 
+	
 	React.useEffect(() => {
 		fetch(`${SERVER}/posts/byid?postId=${postId}`, {
 			method: 'GET',

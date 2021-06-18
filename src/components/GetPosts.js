@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PostCard from '../components/PostCard';
 import { SERVER } from '../config';
+import { withRouter } from "react-router";
 import {
     Button,
     CircularProgress,
@@ -43,6 +44,13 @@ export class GetPosts extends Component {
                         });
                     }
                 } else {
+                    if (res.status === 401) {
+                        if (this.props.page) {
+                            this.props.history.push(this.props.page)
+                        } else {
+                            this.props.history.push('/login')
+                        }
+                    }
                     // enqueueSnackbar(res.message, { variant: "error" });
                     this.setState({
                         ...this.state,
@@ -123,4 +131,4 @@ export class GetPosts extends Component {
     }
 }
 
-export default GetPosts
+export default withRouter(GetPosts);

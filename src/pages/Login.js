@@ -22,7 +22,7 @@ import AuthContext from "../utils/AuthContext";
 import clsx from 'clsx';
 import { validateEmail, validatePassword } from '../utils/validator'
 import { useSnackbar } from 'notistack';
-import { SERVER } from '../config'
+import { SERVER } from '../config';
 
 const useStyles = makeStyles((theme) => ({
     margin: {

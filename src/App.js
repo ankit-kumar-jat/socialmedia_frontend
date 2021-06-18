@@ -71,7 +71,7 @@ function App(props) {
           <AuthContext.Provider value={{ authState, authDispatch }}>
             <Navigation>
               <Switch>
-                <PrivateRoute exact path="/" component={Home} />
+                <Route exact path="/" component={Home} />
                 <PublicRoute exact path="/login" component={Login} />
                 <PublicRoute exact path="/forgetpass" component={ForgetPass} />
                 <PublicRoute exact path="/forgetpass/:token" component={ResetPass} />
