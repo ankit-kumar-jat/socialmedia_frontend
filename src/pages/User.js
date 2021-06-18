@@ -143,7 +143,7 @@ function User(props) {
                                             </ListItem>
                                             <ListItem disableGutters>
                                                 {authState.userId !== data.userId && <Follow userId={data.userId} />}
-                                                <Button className={classes.mrRight} variant="contained" disableElevation>Share Profile</Button>
+                                                {/*<Button className={classes.mrRight} variant="contained" disableElevation>Share Profile</Button>*/}
                                             </ListItem>
                                             <ListItem dense disableGutters>
                                                 <List className={classes.flex} >

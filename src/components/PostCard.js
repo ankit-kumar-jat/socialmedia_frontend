@@ -18,7 +18,7 @@ import {
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Link as RouterLink } from 'react-router-dom';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ShareIcon from '@material-ui/icons/Share';
+// import ShareIcon from '@material-ui/icons/Share';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 // import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
@@ -371,11 +371,11 @@ export default function PostCard(props) {
                                 <CommentOutlinedIcon />
                             </IconButton>
                         </Tooltip>
-                        <Tooltip title="Share this">
+                        {/*<Tooltip title="Share this">
                             <IconButton aria-label="share" className={classes.marginLeft}>
                                 <ShareIcon />
                             </IconButton>
-                        </Tooltip>
+                    </Tooltip>*/}
                     </React.Fragment>)
                         : (<div style={{ height: 36 }}></div>)
                     }
